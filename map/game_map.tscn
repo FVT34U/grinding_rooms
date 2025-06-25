@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfr5l2o2co7es"]
+[gd_scene load_steps=3 format=3 uid="uid://bfr5l2o2co7es"]
 
 [ext_resource type="Script" uid="uid://dbxpkt65jjcjb" path="res://map/game_manager.gd" id="1_f2kjn"]
+[ext_resource type="Script" uid="uid://co4ljtruggwac" path="res://map/camera_2d.gd" id="2_lhyto"]
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_f2kjn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(320, 180)
+script = ExtResource("2_lhyto")

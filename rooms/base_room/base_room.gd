@@ -19,3 +19,10 @@ func _init(width: int = 10, height: int = 10) -> void:
 
 func generate() -> bool:
 	return false
+
+
+func get_room_center_coords() -> Vector2:
+	var x = float(self.width) / 2 * GlobalParameters.sprites_pixel_size
+	var y = float(self.height) / 2 * GlobalParameters.sprites_pixel_size
+	
+	return Vector2(x, y)
