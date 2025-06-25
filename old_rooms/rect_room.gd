@@ -1,4 +1,4 @@
-class_name RectRoom extends BaseRoom
+class_name OldRectRoom extends OldBaseRoom
 
 
 func generate() -> bool:
@@ -22,7 +22,7 @@ func generate() -> bool:
 		for i in range(s_x, e_x):
 			if not self.set_cell_by_idx(
 				Vector2i(i, j),
-				BaseRoom.RoomCellType.FLOOR,
+				OldBaseRoom.RoomCellType.FLOOR,
 			):
 				print("panic at {a}".format({"a": Vector2i(i, j)}))
 				return false

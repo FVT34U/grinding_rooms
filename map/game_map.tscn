@@ -6,4 +6,4 @@
 script = ExtResource("1_f2kjn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(370, 180)
+offset = Vector2(320, 180)

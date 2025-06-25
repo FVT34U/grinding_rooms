@@ -9,9 +9,11 @@ func _init():
 	if GlobalParameters.rng_seed != "default":
 		rng.seed = hash(GlobalParameters.rng_seed)
 	
-	var room = RectRoom.new(100, 60)
+	var room = CircleRoom.new(25, 25)
 	room.name = "Room_%s" % [room_counter]
-	room.generate()
+	
+	if not room.generate(): return
+	
 	add_child(room)
 	current_room = room
 	room_counter += 1

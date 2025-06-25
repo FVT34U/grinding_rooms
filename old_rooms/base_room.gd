@@ -1,4 +1,4 @@
-class_name BaseRoom extends Node2D
+class_name OldBaseRoom extends Node2D
 
 
 var _cells: Array[BaseRoomCell]
