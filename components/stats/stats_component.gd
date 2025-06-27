@@ -1,30 +1,32 @@
-class_name StatsComponent extends Node
+class_name StatsComponent extends BaseComponent
 
 
 var _strength: int = 1
 var strength: int:
-	get: # TODO: сделать фунцию update_stat(ссылка на переменную??) из этого
-		var result = float(_strength)
-		for mod in stats_modifiers:
-			match mod.modifier_type:
-				StatsModifier.ModifierType.FLAT: result += mod.modify() # TODO: хуйня
-				StatsModifier.ModifierType.PERCENT: result += result / 100 * mod.modify()
-		return result
+	get: return _modify_stat("_strength")
 
 var _agility: int = 1
+var agility: int:
+	get: return _modify_stat("_agility")
+
 var _intelligence: int = 1
+var intelligence: int:
+	get: return _modify_stat("_intelligence")
 
-var stats_modifiers: Array[StatsModifier]
+var stats_modifiers: Array[StatsModifier] = []
 
-enum CharClass { # TODO: вынести в конфиг файл для расширяемости
+@export
+var char_class: CharClass = CharClass.KNIGHT
+
+enum CharClass {
 	KNIGHT,
 	RANGER,
 	MAGE,
 }
 
 
-func _init(char_class: CharClass) -> void:
-	match char_class: # TODO: вынести в конфиг файл для расширяемости
+func _init() -> void:
+	match self.char_class:
 		CharClass.KNIGHT:
 			self._strength = 10
 			self._agility = 5
@@ -39,9 +41,22 @@ func _init(char_class: CharClass) -> void:
 			self._intelligence = 12
 
 
-func add_modifier(new_mod: StatsModifier):
+func add_modifier(new_mod: StatsModifier) -> void:
 	stats_modifiers.append(new_mod)
 
 
-func remove_modifier(rm_mod: StatsModifier):
+func remove_modifier(rm_mod: StatsModifier) -> void:
 	stats_modifiers.erase(rm_mod)
+
+
+func _modify_stat(stat_name: String) -> int:
+	var result = float(get(stat_name))
+	var local_stat_name = stat_name.get_slice("_", 0)
+	for mod in stats_modifiers:
+		if local_stat_name not in mod.modifier_list.keys(): continue
+		match mod.modifier_type:
+			StatsModifier.ModifierType.FLAT:
+				result = clamp(result + mod.modifier_list[local_stat_name], 0, 100)
+			StatsModifier.ModifierType.PERCENT:
+				result = clamp(result + result / 100 * mod.modifier_list[local_stat_name], 0, 100) 
+	return round(result)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd88wgcjuaumf"]
+
+[ext_resource type="Script" uid="uid://ohrj4go8b42" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://dtuvdjnq3prf6" path="res://assets/enemies/goblins/Goblin_01.png" id="2_rkbax"]
+[ext_resource type="Script" uid="uid://bffihyquw5xs5" path="res://components/stats/stats_component.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://6eva2l6xiilt" path="res://components/inventory/inventory_component.gd" id="3_yw30f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_oul6g")
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("3_g1dw6")
+metadata/_custom_type_script = "uid://bffihyquw5xs5"
+
+[node name="InventoryComponent" type="Node" parent="."]
+script = ExtResource("3_yw30f")
+metadata/_custom_type_script = "uid://6eva2l6xiilt"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rkbax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oul6g")
