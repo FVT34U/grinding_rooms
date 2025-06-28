@@ -22,7 +22,7 @@ func generate() -> bool:
 
 
 func get_room_center_coords() -> Vector2:
-	var x = float(self.width) / 2 * GlobalParameters.sprites_pixel_size
-	var y = float(self.height) / 2 * GlobalParameters.sprites_pixel_size
+	var x = float(self.width) / 2 * Globals.sprites_pixel_size
+	var y = float(self.height) / 2 * Globals.sprites_pixel_size
 	
 	return Vector2(x, y)

@@ -10,8 +10,8 @@ func get_room_center_coords() -> Vector2:
 
 func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
-	if GlobalParameters.rng_seed != "default":
-		rng.seed = hash(GlobalParameters.rng_seed)
+	if Globals.rng_seed != "default":
+		rng.seed = hash(Globals.rng_seed)
 	
 	var room = RectRoom.new(48, 27)
 	room.name = "Room_%s" % [room_counter]

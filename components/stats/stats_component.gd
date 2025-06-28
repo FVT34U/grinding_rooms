@@ -6,7 +6,7 @@ var stats: Stats
 var stats_modifiers: Array[StatsModifier] = []
 
 
-func _init(cls_name: GlobalParameters.ClassNames) -> void:
+func _init(cls_name: Globals.ClassNames) -> void:
 	stats = Stats.new(cls_name)
 
 

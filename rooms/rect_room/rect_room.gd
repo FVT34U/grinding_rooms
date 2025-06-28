@@ -3,8 +3,8 @@ class_name RectRoom extends BaseRoom
 
 func generate() -> bool:
 	var rng = RandomNumberGenerator.new()
-	if GlobalParameters.rng_seed != "default":
-		rng.seed = hash(GlobalParameters.rng_seed)
+	if Globals.rng_seed != "default":
+		rng.seed = hash(Globals.rng_seed)
 	
 	var r_x = rng.randi_range(3, 6)
 	var r_y = rng.randi_range(3, 6)

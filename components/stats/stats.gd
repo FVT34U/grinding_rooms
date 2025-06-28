@@ -6,17 +6,17 @@ var agility: int = 1
 var intelligence: int = 1
 
 
-func _init(char_class: GlobalParameters.ClassNames) -> void:
+func _init(char_class: Globals.ClassNames) -> void:
 	match char_class:
-		GlobalParameters.ClassNames.KNIGHT:
+		Globals.ClassNames.knight:
 			strength = 10
 			agility = 5
 			intelligence = 3
-		GlobalParameters.ClassNames.RANGER:
+		Globals.ClassNames.ranger:
 			strength = 3
 			agility = 10
 			intelligence = 5
-		GlobalParameters.ClassNames.MAGE:
+		Globals.ClassNames.mage:
 			strength = 3
 			agility = 3
 			intelligence = 12

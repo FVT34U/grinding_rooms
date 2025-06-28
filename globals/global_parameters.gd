@@ -10,7 +10,16 @@ var base_floor_texture = load("res://assets/floor/BaseFloor_01.png")
 var rng_seed = "default"
 
 enum ClassNames {
-	KNIGHT,
-	RANGER,
-	MAGE,
+	knight,
+	ranger,
+	mage,
+	warrior,
+	priest,
+}
+
+enum StatNames {
+	strength,
+	agility,
+	intelligence,
+	faith,
 }

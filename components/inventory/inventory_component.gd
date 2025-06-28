@@ -1,16 +1,16 @@
 class_name InventoryComponent extends BaseComponent
 
 
-var _inventory_list: Array[BaseItem] = []
+var _inventory_list: Array[Item] = []
 @export
-var items_list: Array[BaseItem] = []
+var items_list: Array[Item] = []
 
 @export
 var capacity: int = 10:
 	get: return capacity
 
 
-func add_item(new_item: BaseItem) -> bool:
+func add_item(new_item: Item) -> bool:
 	if self._inventory_list.size() >= capacity:
 		return false
 	
