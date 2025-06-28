@@ -1,44 +1,13 @@
 class_name StatsComponent extends BaseComponent
 
 
-var _strength: int = 1
-var strength: int:
-	get: return _modify_stat("_strength")
-
-var _agility: int = 1
-var agility: int:
-	get: return _modify_stat("_agility")
-
-var _intelligence: int = 1
-var intelligence: int:
-	get: return _modify_stat("_intelligence")
+var stats: Stats
 
 var stats_modifiers: Array[StatsModifier] = []
 
-@export
-var char_class: CharClass = CharClass.KNIGHT
 
-enum CharClass {
-	KNIGHT,
-	RANGER,
-	MAGE,
-}
-
-
-func _init() -> void:
-	match self.char_class:
-		CharClass.KNIGHT:
-			self._strength = 10
-			self._agility = 5
-			self._intelligence = 3
-		CharClass.RANGER:
-			self._strength = 3
-			self._agility = 10
-			self._intelligence = 5
-		CharClass.MAGE:
-			self._strength = 3
-			self._agility = 3
-			self._intelligence = 12
+func _init(cls_name: GlobalParameters.ClassNames) -> void:
+	stats = Stats.new(cls_name)
 
 
 func add_modifier(new_mod: StatsModifier) -> void:

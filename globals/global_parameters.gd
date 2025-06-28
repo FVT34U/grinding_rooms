@@ -8,3 +8,9 @@ var base_floor_texture = load("res://assets/floor/BaseFloor_01.png")
 
 ## use "default" for full random, use anything else for reproducable random
 var rng_seed = "default"
+
+enum ClassNames {
+	KNIGHT,
+	RANGER,
+	MAGE,
+}

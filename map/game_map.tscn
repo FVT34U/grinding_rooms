@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfr5l2o2co7es"]
+[gd_scene load_steps=5 format=3 uid="uid://bfr5l2o2co7es"]
 
 [ext_resource type="Script" uid="uid://dbxpkt65jjcjb" path="res://map/game_manager.gd" id="1_f2kjn"]
 [ext_resource type="Script" uid="uid://co4ljtruggwac" path="res://map/camera_2d.gd" id="2_lhyto"]
+[ext_resource type="PackedScene" uid="uid://cd88wgcjuaumf" path="res://player/player.tscn" id="3_0dvof"]
+[ext_resource type="Resource" uid="uid://2xs34ii5327p" path="res://resources/classes/class_knight.tres" id="4_eg7ip"]
 
 [node name="GameMap" type="Node2D"]
 script = ExtResource("1_f2kjn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_lhyto")
+
+[node name="Player" parent="." instance=ExtResource("3_0dvof")]
+player_class = ExtResource("4_eg7ip")
