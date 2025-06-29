@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BaseItem" load_steps=5 format=3 uid="uid://wxeegd4udgku"]
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://wxeegd4udgku"]
 
 [ext_resource type="Script" uid="uid://iqmbai2nqv24" path="res://resources/stat_modifiers/stat_modifier_recourse.gd" id="1_41ema"]
 [ext_resource type="Script" uid="uid://dc3nv7f8p6h4b" path="res://resources/items/item_resource.gd" id="2_2jjcc"]
@@ -6,19 +6,19 @@
 [sub_resource type="Resource" id="Resource_41ema"]
 script = ExtResource("1_41ema")
 stat_name = 3
-mod_type = 1
-mod_value = 20.0
+modifier_type = 0
+modifier_value = 4.0
 metadata/_custom_type_script = "uid://iqmbai2nqv24"
 
 [sub_resource type="Resource" id="Resource_2jjcc"]
 script = ExtResource("1_41ema")
 stat_name = 0
-mod_type = 1
-mod_value = 20.0
+modifier_type = 0
+modifier_value = -4.0
 metadata/_custom_type_script = "uid://iqmbai2nqv24"
 
 [resource]
 script = ExtResource("2_2jjcc")
 item_name = "Broken Pendant"
-mod_list = Array[ExtResource("1_41ema")]([SubResource("Resource_41ema"), SubResource("Resource_2jjcc")])
+modifier_list = Array[ExtResource("1_41ema")]([SubResource("Resource_41ema"), SubResource("Resource_2jjcc")])
 metadata/_custom_type_script = "uid://dc3nv7f8p6h4b"

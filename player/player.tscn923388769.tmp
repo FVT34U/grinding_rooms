@@ -12,6 +12,7 @@ size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_stats", "player_inventory")]
 script = ExtResource("1_oul6g")
+player_class = null
 player_stats = NodePath("StatsComponent")
 player_inventory = NodePath("InventoryComponent")
 

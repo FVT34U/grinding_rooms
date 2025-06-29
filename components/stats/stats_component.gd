@@ -20,7 +20,7 @@ var faith: int:
 var stats_modifiers: Array[StatModifier] = []
 
 
-func _init(char_cls: CharacterClass) -> void:
+func set_character_class(char_cls: CharacterClass) -> void:
 	self._strength = char_cls.strength
 	self._agility = char_cls.agility
 	self._intelligence = char_cls.intelligence
@@ -36,11 +36,26 @@ func remove_modifier(rm_mod: StatModifier) -> void:
 
 
 func _modify_stat(stat: Globals.StatNames) -> int:
+	var stat_str = Globals.stat_to_str(stat)
+	var result = float(get("_" + stat_str))
 	
 	for mod in stats_modifiers:
+		print(Globals.stat_to_str(mod.stat_name) + " " + stat_str)
+		if Globals.stat_to_str(mod.stat_name) != stat_str:
+			continue
 		match mod.modifier_type:
-			StatsModifier.ModifierType.FLAT:
-				result = clamp(result + mod.modifier_list[local_stat_name], 0, 100)
-			StatsModifier.ModifierType.PERCENT:
-				result = clamp(result + result / 100 * mod.modifier_list[local_stat_name], 0, 100) 
+			StatModifier.ModifierType.flat:
+				result = clampi(result + mod.modifier_value, 0, 100)
+			StatModifier.ModifierType.percent:
+				result = clampi(result + result / 100 * mod.modifier_value, 0, 100)
+	print(result)
 	return round(result)
+
+
+func get_stats_dict() -> Dictionary:
+	return {
+		"strength": self.strength,
+		"agility": self.agility,
+		"intelligence": self.intelligence,
+		"faith": self.faith,
+	}
