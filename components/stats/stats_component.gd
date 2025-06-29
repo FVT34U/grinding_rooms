@@ -1,28 +1,43 @@
 class_name StatsComponent extends BaseComponent
 
 
-var stats: Stats
+var _strength: int = 1
+var strength: int:
+	get: return _modify_stat(Globals.StatNames.strength)
 
-var stats_modifiers: Array[StatsModifier] = []
+var _agility: int = 1
+var agility: int:
+	get: return _modify_stat(Globals.StatNames.agility)
+
+var _intelligence: int = 1
+var intelligence: int:
+	get: return _modify_stat(Globals.StatNames.intelligence)
+
+var _faith: int = 1
+var faith: int:
+	get: return _modify_stat(Globals.StatNames.faith)
+
+var stats_modifiers: Array[StatModifier] = []
 
 
-func _init(cls_name: Globals.ClassNames) -> void:
-	stats = Stats.new(cls_name)
+func _init(char_cls: CharacterClass) -> void:
+	self._strength = char_cls.strength
+	self._agility = char_cls.agility
+	self._intelligence = char_cls.intelligence
+	self._faith = char_cls.faith
 
 
-func add_modifier(new_mod: StatsModifier) -> void:
+func add_modifier(new_mod: StatModifier) -> void:
 	stats_modifiers.append(new_mod)
 
 
-func remove_modifier(rm_mod: StatsModifier) -> void:
+func remove_modifier(rm_mod: StatModifier) -> void:
 	stats_modifiers.erase(rm_mod)
 
 
-func _modify_stat(stat_name: String) -> int:
-	var result = float(get(stat_name))
-	var local_stat_name = stat_name.get_slice("_", 0)
+func _modify_stat(stat: Globals.StatNames) -> int:
+	
 	for mod in stats_modifiers:
-		if local_stat_name not in mod.modifier_list.keys(): continue
 		match mod.modifier_type:
 			StatsModifier.ModifierType.FLAT:
 				result = clamp(result + mod.modifier_list[local_stat_name], 0, 100)

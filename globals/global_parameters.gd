@@ -23,3 +23,6 @@ enum StatNames {
 	intelligence,
 	faith,
 }
+
+func _ready() -> void:
+	print(StatNames.keys()[StatNames.strength])

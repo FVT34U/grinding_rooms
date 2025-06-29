@@ -7,5 +7,4 @@ var player_stats: StatsComponent
 
 
 func _init():
-	#player_stats = StatsComponent.new(player_class)
-	pass
+	player_stats = StatsComponent.new(player_class)
