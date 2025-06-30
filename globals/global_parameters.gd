@@ -28,8 +28,26 @@ enum StatNames {
 	agility,
 	intelligence,
 	faith,
+	luck,
+}
+
+enum CharacteristicNames {
+	hp,
+	mp,
+	melee_damage,
+	range_damage,
+	magic_damage,
+	physical_defence,
+	magical_defence,
+	evasion_rate,
+	parry_rate,
+	speed,
 }
 
 
 func stat_to_str(stat: StatNames) -> String:
 	return StatNames.keys()[stat]
+
+
+func char_to_str(stat: CharacteristicNames) -> String:
+	return CharacteristicsNames.keys()[stat]

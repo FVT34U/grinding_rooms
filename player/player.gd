@@ -25,3 +25,6 @@ func _ready():
 	
 	await get_tree().create_timer(1).timeout
 	print(player_stats.get_stats_dict())
+	
+	player_inventory.remove_item(player_inventory._inventory_list[0])
+	print(player_stats.get_stats_dict())

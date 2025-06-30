@@ -3,8 +3,8 @@ class_name CircleRoom extends BaseRoom
 
 func generate() -> bool:
 	var rng = RandomNumberGenerator.new()
-	if GlobalParameters.rng_seed != "default":
-		rng.seed = hash(GlobalParameters.rng_seed)
+	if Globals.rng_seed != "default":
+		rng.seed = hash(Globals.rng_seed)
 	
 	var c_x = self.width / 2
 	var c_y = self.height / 2

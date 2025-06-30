@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd88wgcjuaumf"]
+[gd_scene load_steps=9 format=3 uid="uid://cd88wgcjuaumf"]
 
 [ext_resource type="Script" uid="uid://ohrj4go8b42" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://dtuvdjnq3prf6" path="res://assets/enemies/goblins/Goblin_01.png" id="2_rkbax"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://6eva2l6xiilt" path="res://components/inventory/inventory_component.gd" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://dc3nv7f8p6h4b" path="res://resources/items/item_resource.gd" id="4_g6k8r"]
 [ext_resource type="Resource" uid="uid://wxeegd4udgku" path="res://resources/items/item_broken_pendant.tres" id="5_boad6"]
+[ext_resource type="Resource" uid="uid://eab8v81fbs38" path="res://resources/items/item_lucky_charm.tres" id="6_boad6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
 size = Vector2(16, 16)
@@ -19,9 +20,10 @@ player_inventory = NodePath("InventoryComponent")
 script = ExtResource("3_g1dw6")
 metadata/_custom_type_script = "uid://bffihyquw5xs5"
 
-[node name="InventoryComponent" type="Node" parent="."]
+[node name="InventoryComponent" type="Node" parent="." node_paths=PackedStringArray("stats_component")]
 script = ExtResource("3_yw30f")
-debug_items_list = Array[ExtResource("4_g6k8r")]([ExtResource("5_boad6")])
+debug_items_list = Array[ExtResource("4_g6k8r")]([ExtResource("5_boad6"), ExtResource("6_boad6")])
+stats_component = NodePath("../StatsComponent")
 metadata/_custom_type_script = "uid://6eva2l6xiilt"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://eab8v81fbs38"]
+
+[ext_resource type="Script" uid="uid://iqmbai2nqv24" path="res://resources/stat_modifiers/stat_modifier_recourse.gd" id="1_ch6xs"]
+[ext_resource type="Script" uid="uid://dc3nv7f8p6h4b" path="res://resources/items/item_resource.gd" id="2_ou54q"]
+
+[sub_resource type="Resource" id="Resource_ch6xs"]
+script = ExtResource("1_ch6xs")
+stat_name = 4
+modifier_type = 0
+modifier_value = 3.0
+metadata/_custom_type_script = "uid://iqmbai2nqv24"
+
+[resource]
+script = ExtResource("2_ou54q")
+item_name = "Lucky Charm"
+modifier_list = Array[ExtResource("1_ch6xs")]([SubResource("Resource_ch6xs")])
+metadata/_custom_type_script = "uid://dc3nv7f8p6h4b"
