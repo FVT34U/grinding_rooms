@@ -3,27 +3,35 @@ class_name StatsComponent extends BaseComponent
 
 var _strength: int = 1
 var strength: int:
-	get: return _modify_main_stat(Globals.StatNames.strength)
+	get: return _modify_attribute(Globals.StatNames.strength)
 
 var _agility: int = 1
 var agility: int:
-	get: return _modify_main_stat(Globals.StatNames.agility)
+	get: return _modify_attribute(Globals.StatNames.agility)
 
 var _intelligence: int = 1
 var intelligence: int:
-	get: return _modify_main_stat(Globals.StatNames.intelligence)
+	get: return _modify_attribute(Globals.StatNames.intelligence)
 
 var _faith: int = 1
 var faith: int:
-	get: return _modify_main_stat(Globals.StatNames.faith)
+	get: return _modify_attribute(Globals.StatNames.faith)
 
 var _luck: int = 1
 var luck: int:
-	get: return _modify_main_stat(Globals.StatNames.luck)
+	get: return _modify_attribute(Globals.StatNames.luck)
 
 var _melee_damage: int = 1
 var melee_damage: int:
 	get: return _calculate_melee_damage()
+
+var _range_damage: int = 1
+var range_damage: int:
+	get: return _calculate_range_damage()
+
+var _magic_damage: int = 1
+var magic_damage: int:
+	get: return _calculate_magic_damage()
 
 var stats_modifiers: Array[StatModifier] = []
 
@@ -45,12 +53,12 @@ func remove_modifier(rm_mod: StatModifier) -> void:
 
 
 ## strength, agility, intelligence, faith, luck and other like this in the future
-func _modify_main_stat(stat: Globals.StatNames) -> int:
-	var stat_str = Globals.stat_to_str(stat)
+func _modify_attribute(stat: Globals.StatNames) -> int:
+	var stat_str = Globals.stat_str_name(stat)
 	var result = float(get("_" + stat_str))
 	
 	for mod in stats_modifiers:
-		if Globals.stat_to_str(mod.stat_name) != stat_str:
+		if Globals.stat_str_name(mod.stat_name) != stat_str:
 			continue
 		match mod.modifier_type:
 			StatModifier.ModifierType.flat:
@@ -61,17 +69,46 @@ func _modify_main_stat(stat: Globals.StatNames) -> int:
 	return round(result)
 
 
-func _modify_stat(stat: Globals.CharacteristicNames) -> int:
-	var stat_str = Globals.char_to_str(stat)
+func _modify_characteritic(stat: Globals.StatNames) -> int:
+	var stat_str = Globals.stat_str_name(stat)
 	var result = float(get("_" + stat_str))
-	return round(result)
+	
+	for mod in stats_modifiers:
+		if Globals.stat_str_name(mod.stat_name) != stat_str:
+			continue
+		match mod.modifier_type:
+			StatModifier.ModifierType.flat:
+				result = result + mod.modifier_value
+			StatModifier.ModifierType.percent:
+				result = result + result / 100 * mod.modifier_value
+	
+	return roundi(result)
 
 
 func _calculate_melee_damage() -> int:
+	var rng = Globals.get_rng()
+	
+	return roundi(
+		(
+			strength * 2 + \
+			agility * 1.5 + \
+			_modify_characteritic(Globals.StatNames.melee_damage)
+		) * \
+		(1 + luck / 100 * rng.randi_range(-1, 1))
+	)
+
+
+func _calculate_range_damage() -> int:
 	return \
-		strength * 2 + \
-		roundi(agility * 1.5) + \
-		_modify_stat(Globals.CharacteristicNames.melee_damage) # TODO: rework...
+		agility * 2 + \
+		roundi(strength * 1.5) + \
+		_modify_characteritic(Globals.StatNames.range_damage)
+
+
+func _calculate_magic_damage() -> int:
+	return \
+		intelligence * 3 + \
+		_modify_characteritic(Globals.StatNames.magic_damage)
 
 
 func get_stats_dict() -> Dictionary:
@@ -81,4 +118,5 @@ func get_stats_dict() -> Dictionary:
 		"intelligence": intelligence,
 		"faith": faith,
 		"luck": luck,
+		"melee_damage": melee_damage
 	}

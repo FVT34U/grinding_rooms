@@ -9,6 +9,14 @@ var base_floor_texture = preload("res://assets/floor/BaseFloor_01.png")
 ## use "default" for full random, use anything else for reproducable random
 var rng_seed = "default"
 
+
+func get_rng() -> RandomNumberGenerator:
+	var rng = RandomNumberGenerator.new()
+	if Globals.rng_seed != "default":
+		rng.seed = Globals.rng_seed
+	return rng
+
+
 enum ClassNames {
 	knight,
 	ranger,
@@ -23,15 +31,13 @@ var class_mage = preload("res://resources/classes/class_mage.tres")
 var class_warrior = preload("res://resources/classes/class_warrior.tres")
 var class_priest = preload("res://resources/classes/class_priest.tres")
 
+
 enum StatNames {
 	strength,
 	agility,
 	intelligence,
 	faith,
 	luck,
-}
-
-enum CharacteristicNames {
 	hp,
 	mp,
 	melee_damage,
@@ -45,9 +51,5 @@ enum CharacteristicNames {
 }
 
 
-func stat_to_str(stat: StatNames) -> String:
+func stat_str_name(stat: StatNames) -> String:
 	return StatNames.keys()[stat]
-
-
-func char_to_str(stat: CharacteristicNames) -> String:
-	return CharacteristicsNames.keys()[stat]
