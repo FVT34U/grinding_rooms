@@ -26,3 +26,7 @@ func get_room_center_coords() -> Vector2:
 	var y = float(self.height) / 2 * Globals.sprites_pixel_size
 	
 	return Vector2(x, y)
+
+
+func get_room_center_cell_coords() -> Vector2:
+	return map_to_local(local_to_map(get_room_center_coords()))

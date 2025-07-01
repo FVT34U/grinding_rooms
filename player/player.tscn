@@ -26,7 +26,7 @@ debug_items_list = Array[ExtResource("4_g6k8r")]([ExtResource("5_boad6"), ExtRes
 stats_component = NodePath("../StatsComponent")
 metadata/_custom_type_script = "uid://6eva2l6xiilt"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

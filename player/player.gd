@@ -9,6 +9,10 @@ var player_stats: StatsComponent
 @export
 var player_inventory: InventoryComponent
 
+@onready var game_manager: GameManager = get_parent()
+
+var path: Array[Vector2] = []
+
 
 func _ready():
 	match player_class:
@@ -28,3 +32,8 @@ func _ready():
 	
 	player_inventory.remove_item(player_inventory._inventory_list[0])
 	print(player_stats.get_stats_dict())
+
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		path = game_manager.astar.get_astar_path(position, event.position)
