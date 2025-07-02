@@ -1,0 +1,76 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="Страница — 1" id="F485koDoDc225y0sh10d">
+    <mxGraphModel dx="2793" dy="1729" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t151YAEw3NwL-A4LUWF_-4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-1" target="t151YAEw3NwL-A4LUWF_-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-1" target="t151YAEw3NwL-A4LUWF_-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-1" target="t151YAEw3NwL-A4LUWF_-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-1" value="Turn" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-839" y="-645" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-2" value="MainAction&lt;div&gt;- visible&lt;/div&gt;&lt;div&gt;- attack/heal/use&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-983" y="-563" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-3" value="SecondaryAction&lt;br&gt;- invisible&lt;div&gt;- evade/parry/trap&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-687" y="-563" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-6" value="Move&lt;div&gt;- in any time&lt;/div&gt;&lt;div&gt;- has limit&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-839" y="-473" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-8" target="t151YAEw3NwL-A4LUWF_-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-8" value="Character" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="37" y="-133" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;curved=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-9" target="t151YAEw3NwL-A4LUWF_-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;curved=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-9" target="t151YAEw3NwL-A4LUWF_-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-9" value="Characteristics" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="37" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-39" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-10" target="t151YAEw3NwL-A4LUWF_-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-10" value="Attributes" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-246" y="189" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-18" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-11" target="t151YAEw3NwL-A4LUWF_-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-19" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;curved=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-11" target="t151YAEw3NwL-A4LUWF_-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;curved=1;labelBackgroundColor=none;fontColor=default;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-11" target="t151YAEw3NwL-A4LUWF_-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-11" value="Parameters" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="367" y="189" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-15" value="Attack" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="206" y="306" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-16" value="Defence" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="367" y="306" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-17" value="Utility" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="527" y="306" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-38" value="&lt;ul&gt;&lt;li&gt;Представляют собой целочисленные (int) значения в диапазоне от 1 до 100&lt;/li&gt;&lt;li&gt;Значения могут быть повышены с прокачкой уровня персонажа&lt;/li&gt;&lt;li&gt;Базовые значения опредляются выбранным классом персонажа&lt;/li&gt;&lt;li&gt;Значения могут быть изменены предметами, заклинаниями и эффектами&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;Strength (сила) - влияет на урон в ближнем (х2) и дальнем (х1.5) бою&lt;/li&gt;&lt;li&gt;Agility (ловкость) - влияет на урон в ближнем (х1.5) и дальнем (х2) бою&lt;/li&gt;&lt;li&gt;Intelligence (интеллект) - влияет на урон от заклинаний (х3)&lt;/li&gt;&lt;li&gt;Faith (вера) - влияет на элементальный урон (х1.5)&lt;/li&gt;&lt;li&gt;Luck (удача) - означает силу влияния удачи, к примеру:&lt;br&gt;- damage * (1 + luck / 100 * randi(-1, 1))&lt;br&gt;- another example...&lt;/li&gt;&lt;li&gt;Curse (проклятие) - увеличивает входящий и исходящий урон:&lt;br&gt;- in/out_damage * (curse / 10)&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacing=2;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-384" y="291" width="396" height="341" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

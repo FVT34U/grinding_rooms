@@ -1,0 +1,31 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="Страница — 1" id="F485koDoDc225y0sh10d">
+    <mxGraphModel dx="1434" dy="836" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t151YAEw3NwL-A4LUWF_-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-1" target="t151YAEw3NwL-A4LUWF_-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-1" target="t151YAEw3NwL-A4LUWF_-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="t151YAEw3NwL-A4LUWF_-1" target="t151YAEw3NwL-A4LUWF_-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-1" value="Turn" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="6" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-2" value="MainAction&lt;div&gt;- visible&lt;/div&gt;&lt;div&gt;- attack/heal/use&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="166" y="88" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-3" value="SecondaryAction&lt;br&gt;- invisible&lt;div&gt;- roll/parry/trap&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="462" y="88" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t151YAEw3NwL-A4LUWF_-6" value="Move" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="178" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
