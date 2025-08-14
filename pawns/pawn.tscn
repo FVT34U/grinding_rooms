@@ -7,6 +7,9 @@
 size = Vector2(8, 5)
 
 [node name="Pawn" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
 script = ExtResource("1_o1hwx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
