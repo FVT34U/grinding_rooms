@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://uos8tiyhye5s"]
+
+[ext_resource type="Script" uid="uid://ba0vaqb8nx6rd" path="res://world/battle_manager.gd" id="1_06gbv"]
+[ext_resource type="PackedScene" uid="uid://k06684f6e13" path="res://pawns/pawn_manager.tscn" id="1_bkejs"]
+[ext_resource type="PackedScene" uid="uid://cc278gfothvqi" path="res://pawns/pawn.tscn" id="2_2rlvq"]
+[ext_resource type="PackedScene" uid="uid://dunbjw7h213pw" path="res://ui/hud.tscn" id="4_q6yfc"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_06gbv")
+
+[node name="PawnManagerAlly" parent="." instance=ExtResource("1_bkejs")]
+manager_team = 0
+
+[node name="Pawn" parent="PawnManagerAlly" instance=ExtResource("2_2rlvq")]
+position = Vector2(24, 15)
+pawn_team = 0
+
+[node name="Pawn2" parent="PawnManagerAlly" instance=ExtResource("2_2rlvq")]
+position = Vector2(48, 15)
+pawn_team = 0
+
+[node name="Pawn3" parent="PawnManagerAlly" instance=ExtResource("2_2rlvq")]
+position = Vector2(72, 15)
+pawn_team = 0
+
+[node name="PawnManagerEnemy" parent="." instance=ExtResource("1_bkejs")]
+
+[node name="Pawn" parent="PawnManagerEnemy" instance=ExtResource("2_2rlvq")]
+position = Vector2(24, 45)
+
+[node name="Pawn2" parent="PawnManagerEnemy" instance=ExtResource("2_2rlvq")]
+position = Vector2(48, 45)
+
+[node name="Pawn3" parent="PawnManagerEnemy" instance=ExtResource("2_2rlvq")]
+position = Vector2(72, 45)
+
+[node name="HUD" parent="." instance=ExtResource("4_q6yfc")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

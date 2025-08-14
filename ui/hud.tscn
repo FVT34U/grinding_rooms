@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://dunbjw7h213pw"]
+
+[ext_resource type="Script" uid="uid://dv6t6v114824o" path="res://ui/hud_manager.gd" id="1_276te"]
+[ext_resource type="PackedScene" uid="uid://drbi2ec3wuyw1" path="res://ui/pawn_portrait.tscn" id="1_rbyyf"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_276te")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EnemyPortraitContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="PawnPortrait" parent="MarginContainer/HBoxContainer/VBoxContainer/EnemyPortraitContainer" instance=ExtResource("1_rbyyf")]
+layout_mode = 2
+
+[node name="PawnPortrait2" parent="MarginContainer/HBoxContainer/VBoxContainer/EnemyPortraitContainer" instance=ExtResource("1_rbyyf")]
+layout_mode = 2
+
+[node name="PawnPortrait3" parent="MarginContainer/HBoxContainer/VBoxContainer/EnemyPortraitContainer" instance=ExtResource("1_rbyyf")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AllyPortraitContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="PawnPortrait" parent="MarginContainer/HBoxContainer/VBoxContainer/AllyPortraitContainer" instance=ExtResource("1_rbyyf")]
+layout_mode = 2
+
+[node name="PawnPortrait2" parent="MarginContainer/HBoxContainer/VBoxContainer/AllyPortraitContainer" instance=ExtResource("1_rbyyf")]
+layout_mode = 2
+
+[node name="PawnPortrait3" parent="MarginContainer/HBoxContainer/VBoxContainer/AllyPortraitContainer" instance=ExtResource("1_rbyyf")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

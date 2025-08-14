@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://drbi2ec3wuyw1"]
+
+[ext_resource type="Texture2D" uid="uid://c0mp1v2g05b5c" path="res://assets/Goblin_01.png" id="1_k2h6q"]
+[ext_resource type="Texture2D" uid="uid://ckc2x4v8kxl6l" path="res://assets/UI_Portrait_Frame_01.png" id="2_hi8yw"]
+
+[node name="PawnPortrait" type="Button"]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -256.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_k2h6q")
+stretch_mode = 5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_hi8yw")
