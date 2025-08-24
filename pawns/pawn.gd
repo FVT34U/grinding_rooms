@@ -5,7 +5,7 @@ class_name Pawn extends CharacterBody2D
 
 @onready var team_manager: PawnManager = get_parent()
 
-@export var speed: float = 2000.0
+@export var speed: float = 5000.0
 var is_moving: bool = false
 
 var _path: Array[Vector2i] = []
