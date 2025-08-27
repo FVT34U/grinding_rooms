@@ -14,7 +14,7 @@ var path: Array[Vector2i]:
 		if value.size() >= 2:
 			_path = value
 			is_moving = true
-		else: printerr("ERROR: path must contain at least 2 points")
+		else: printerr("Path must contain at least 2 points")
 	get: return _path
 
 

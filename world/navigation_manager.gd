@@ -12,24 +12,28 @@ func _ready() -> void:
 	astar.cell_size = Vector2(32, 32)
 	astar.diagonal_mode = astar.DIAGONAL_MODE_NEVER
 	astar.update()
-	#TODO: add obstacles
+	
 	for cell in obstacle_tilemap.get_used_cells():
 		astar.set_point_solid(cell)
 	astar.update()
+	
+	EnhancedInput.left_click.connect(_on_left_click)
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouse and event.is_action_pressed("left_click"):
-		var end_point = event.position
-		var start_point = %Pawn.position
-		var arr: Array[Vector2i] = []
+func _on_left_click(event):
+	var end_point: Vector2i = tilemap.local_to_map(event.position)
+	var start_point: Vector2i = tilemap.local_to_map(%Pawn.position)
+	
+	if end_point == start_point: return
+	
+	var arr: Array[Vector2i] = []
 
-		var path = astar.get_point_path(
-			tilemap.local_to_map(start_point),
-			tilemap.local_to_map(end_point)
-		)
-		
-		if not path.is_empty():
-			for el in path:
-				arr.append(Vector2i(el) + Vector2i(16, 16))
-			%Pawn.path = arr
+	var path = astar.get_point_path(
+		start_point,
+		end_point
+	)
+	
+	if not path.is_empty():
+		for el in path:
+			arr.append(Vector2i(el) + Vector2i(16, 16))
+		%Pawn.path = arr
