@@ -16,24 +16,22 @@ func _ready() -> void:
 	for cell in obstacle_tilemap.get_used_cells():
 		astar.set_point_solid(cell)
 	astar.update()
-	
-	EnhancedInput.left_click.connect(_on_left_click)
 
 
-func _on_left_click(event):
-	var end_point: Vector2i = tilemap.local_to_map(event.position)
-	var start_point: Vector2i = tilemap.local_to_map(%Pawn.position)
+func get_pawn_path(from: Vector2, to: Vector2) -> Array[Vector2i]:
+	var start_point: Vector2i = tilemap.local_to_map(from)
+	var end_point: Vector2i = tilemap.local_to_map(to)
 	
-	if end_point == start_point: return
+	if end_point == start_point: return []
 	
-	var arr: Array[Vector2i] = []
-
-	var path = astar.get_point_path(
+	var path: Array[Vector2i] = []
+	var raw_path = astar.get_point_path(
 		start_point,
 		end_point
 	)
 	
-	if not path.is_empty():
-		for el in path:
-			arr.append(Vector2i(el) + Vector2i(16, 16))
-		%Pawn.path = arr
+	if not raw_path.is_empty():
+		for el in raw_path:
+			path.append(Vector2i(el) + Vector2i(16, 16))
+	
+	return path
