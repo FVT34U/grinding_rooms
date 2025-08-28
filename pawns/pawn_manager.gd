@@ -1,5 +1,5 @@
 class_name PawnManager extends Node
-
+# TODO: Make AllyPawnManager and NonAllyPawnManager or smthng
 
 enum Team {
 	ALLY,
@@ -32,4 +32,11 @@ func _ready() -> void:
 
 func _on_left_click(event: InputEventMouse):
 	if manager_team != Team.ALLY: return
-	active_pawn.path = %NavigationManager.get_pawn_path(active_pawn.position, event.position)
+	
+	active_pawn.path = %NavigationManager.get_pawn_path(
+		active_pawn.position, event.position
+	)
+
+
+func add_pawn():
+	pass

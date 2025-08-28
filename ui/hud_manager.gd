@@ -1,13 +1,60 @@
 class_name HUDManager extends CanvasLayer
 
+var enemy_portraits = []
+var ally_portraits = []
+
+var active_portrait: Button = null
+
+signal active_pawn_changed(idx: int)
+
 
 func _ready() -> void:
-	%EnemyPortraitContainer.child_entered_tree.connect(_on_child_entered_tree)
+	%EnemyPortraitContainer.child_entered_tree.connect(
+		_on_enemy_portraits_child_entered_tree
+	)
+	%AllyPortraitContainer.child_entered_tree.connect(
+		_on_ally_portraits_child_entered_tree
+	)
 	
-	for child: Button in %EnemyPortraitContainer.get_children():
+	enemy_portraits = %EnemyPortraitContainer.get_children()
+	ally_portraits = %AllyPortraitContainer.get_children()
+	
+	for child: Button in enemy_portraits:
 		child.disabled = true
+	
+	var idx = 0
+	for child: Button in ally_portraits:
+		child.pressed.connect(_on_portrait_pressed.bind())
+	
+	active_portrait = ally_portraits[0]
+	active_portrait.grab_focus()
 
 
-func _on_child_entered_tree(node: Node):
-	if node is Button:
-		node.disabled = true
+func _on_enemy_portraits_child_entered_tree(node: Node):
+	if node is not Button:
+		%EnemyPortraitContainer.remove_child(node)
+		return
+	
+	node.disabled = true
+	enemy_portraits.append(node)
+
+
+func _on_ally_portraits_child_entered_tree(node: Node):
+	if node is not Button:
+		%AllyPortraitContainer.remove_child(node)
+		return
+	
+	ally_portraits.append(node)
+
+
+func _on_portrait_pressed():
+	pass
+
+
+func get_focused_pawn_portrait_idx() -> int:
+	var idx = 0
+	for portrait: Button in ally_portraits:
+		if portrait.has_focus(): return idx
+		idx += 1
+	
+	return -1

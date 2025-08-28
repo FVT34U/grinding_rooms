@@ -44,6 +44,7 @@ tilemap = NodePath("../TileMapLayer")
 obstacle_tilemap = NodePath("../ObstacleTileMapLayer")
 
 [node name="HUD" parent="." instance=ExtResource("4_q6yfc")]
+unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 180)
