@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://k06684f6e13"]
-
-[ext_resource type="Script" uid="uid://51r7p0vu1x85" path="res://pawns/pawn_manager.gd" id="1_ggqrg"]
-
-[node name="PawnManager" type="Node"]
-script = ExtResource("1_ggqrg")

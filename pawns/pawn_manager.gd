@@ -1,12 +1,17 @@
 class_name PawnManager extends Node
-# TODO: Make AllyPawnManager and NonAllyPawnManager or smthng
+
 
 enum Team {
-	ALLY,
-	ENEMY
+	BLUE, 
+	RED,
+	GREEN,
+	WHITE,
+	BLACK,
 }
 
-@export var manager_team = Team.ENEMY
+## BLUE - only for player
+## RED - basic enemy team
+@export var manager_team = Team.RED
 
 @onready var controlled_pawns: Array[Pawn] = []
 var active_pawn: Pawn = null
@@ -26,16 +31,6 @@ func _ready() -> void:
 	
 	if not controlled_pawns.is_empty():
 		active_pawn = controlled_pawns[0]
-	
-	EnhancedInput.left_click.connect(_on_left_click)
-
-
-func _on_left_click(event: InputEventMouse):
-	if manager_team != Team.ALLY: return
-	
-	active_pawn.path = %NavigationManager.get_pawn_path(
-		active_pawn.position, event.position
-	)
 
 
 func add_pawn():

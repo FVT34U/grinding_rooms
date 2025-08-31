@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl501uvg5to8l"]
+
+[ext_resource type="Script" uid="uid://b2b78aua4ewtf" path="res://pawns/player_pawn_manager.gd" id="1_bvlla"]
+
+[node name="PlayerPawnManager" type="Node"]
+script = ExtResource("1_bvlla")
+manager_team = 0

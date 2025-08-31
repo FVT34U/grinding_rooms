@@ -1,7 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc278gfothvqi"]
+[gd_scene load_steps=6 format=3 uid="uid://cc278gfothvqi"]
 
 [ext_resource type="Texture2D" uid="uid://c0mp1v2g05b5c" path="res://assets/Goblin_01.png" id="1_6xobo"]
 [ext_resource type="Script" uid="uid://dhk7trr04ig0w" path="res://pawns/pawn.gd" id="1_o1hwx"]
+[ext_resource type="Shader" uid="uid://basvh6au61jsh" path="res://pawns/select_glowing.gdshader" id="2_2l1py"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8iwri"]
+resource_local_to_scene = true
+shader = ExtResource("2_2l1py")
+shader_parameter/enabled = false
+shader_parameter/thickness = 2
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/alpha_threshold = 0.5
+shader_parameter/pulse_speed = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
 size = Vector2(8, 5)
@@ -13,6 +23,7 @@ motion_mode = 1
 script = ExtResource("1_o1hwx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8iwri")
 texture = ExtResource("1_6xobo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

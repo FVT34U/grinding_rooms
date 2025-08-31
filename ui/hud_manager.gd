@@ -5,6 +5,8 @@ var ally_portraits = []
 
 var active_portrait: Button = null
 
+@onready var world: BattleManager = get_parent()
+
 signal active_pawn_changed(idx: int)
 
 
@@ -15,6 +17,9 @@ func _ready() -> void:
 	%AllyPortraitContainer.child_entered_tree.connect(
 		_on_ally_portraits_child_entered_tree
 	)
+	
+	world.amount_of_seconds_changed.connect(_on_amount_of_seconds_changed)
+	world.amount_of_minutes_changed.connect(_on_amount_of_minutes_changed)
 	
 	enemy_portraits = %EnemyPortraitContainer.get_children()
 	ally_portraits = %AllyPortraitContainer.get_children()
@@ -49,6 +54,14 @@ func _on_ally_portraits_child_entered_tree(node: Node):
 
 func _on_portrait_pressed():
 	pass
+
+
+func _on_amount_of_seconds_changed(value):
+	%LabelSeconds.text = "0" + str(value) if value < 10 else str(value)
+
+
+func _on_amount_of_minutes_changed(value):
+	%LabelMinutes.text = "0" + str(value) if value < 10 else str(value)
 
 
 func get_focused_pawn_portrait_idx() -> int:

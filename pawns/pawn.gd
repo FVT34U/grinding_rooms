@@ -1,9 +1,10 @@
 class_name Pawn extends CharacterBody2D
 
 
-@export var pawn_team = PawnManager.Team.ENEMY
+@export var pawn_team = PawnManager.Team.RED
 
 @onready var team_manager: PawnManager = get_parent()
+@onready var sprite: Sprite2D = $Sprite2D
 
 @export var speed: float = 5000.0
 var is_moving: bool = false
@@ -16,6 +17,10 @@ var path: Array[Vector2i]:
 			is_moving = true
 		else: print("Warning: Path must contain at least 2 points")
 	get: return _path
+
+
+func set_active_glowing(value: bool):
+	sprite.material.set_shader_parameter("enabled", value)
 
 
 func _get_path_next_point() -> Vector2i:

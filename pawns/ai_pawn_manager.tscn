@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsac58reggwcx"]
+
+[ext_resource type="Script" uid="uid://bs0kjrcdljrin" path="res://pawns/ai_pawn_manager.gd" id="1_77y4k"]
+
+[node name="AiPawnManager" type="Node"]
+script = ExtResource("1_77y4k")
