@@ -3,6 +3,7 @@ extends Node
 signal left_click(event: InputEventMouse)
 signal right_click(event: InputEventMouse)
 signal escape(event: InputEvent)
+signal tab(event: InputEvent)
 
 signal left_click_with_motion(event: InputEventMouseMotion)
 
@@ -23,3 +24,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEvent and event.is_action_pressed("escape"):
 		get_tree().quit(0)
+	if event is InputEvent and event.is_action_pressed("tab"):
+		tab.emit(event)
