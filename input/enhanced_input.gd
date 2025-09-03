@@ -17,9 +17,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and hold_lmb:
 		left_click_with_motion.emit(event)
 	
-	if event is InputEventMouse and event.is_action_pressed("left_click"):
+	if event is InputEventMouseButton and event.is_action_pressed("left_click"):
 		left_click.emit(event)
-	if event is InputEventMouse and event.is_action_pressed("right_click"):
+	if event is InputEventMouseButton and event.is_action_pressed("right_click"):
 		right_click.emit(event)
 	
 	if event is InputEvent and event.is_action_pressed("escape"):

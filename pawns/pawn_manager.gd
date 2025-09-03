@@ -28,10 +28,18 @@ func change_pawn_team(manager: PawnManager, pawn: Pawn) -> bool:
 func _ready() -> void:
 	for child: Pawn in get_children():
 		controlled_pawns.append(child)
+		child.input_event.connect(_on_input_on_pawn.bind(child))
 	
 	if not controlled_pawns.is_empty():
 		active_pawn = controlled_pawns[0]
 
 
-func add_pawn():
-	pass
+func _on_input_on_pawn( 
+	viewport: Node, 
+	event: InputEvent, 
+	shape_idx: int,
+	pawn: Pawn
+):
+	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
+		print(pawn.name)
+		active_pawn = pawn
