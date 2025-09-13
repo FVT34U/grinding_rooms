@@ -22,12 +22,15 @@ func _ready() -> void:
 
 
 func _on_left_click(event: InputEventMouse):
-	if active_pawn == null or control_type != ControlType.PAWN: return
-	
-	active_pawn.path = nav_manager.get_pawn_path(
-		active_pawn.position,
-		camera.get_global_mouse_position()
-	)
+	match control_type:
+		ControlType.CAMERA:
+			return
+		ControlType.PAWN:
+			active_pawn.path = nav_manager.get_pawn_path(
+				active_pawn.position,
+				camera.get_global_mouse_position()
+			)
+			return
 
 
 func _on_left_click_with_motion(event: InputEventMouseMotion):
@@ -38,3 +41,17 @@ func _on_left_click_with_motion(event: InputEventMouseMotion):
 
 func _on_tab_clicked(event: InputEvent):
 	control_type = (control_type + 1) % ControlType.size()
+
+
+func _on_input_on_pawn(
+	viewport: Node, 
+	event: InputEvent, 
+	shape_idx: int,
+	pawn: Pawn
+):
+	if control_type != ControlType.CAMERA: return
+	
+	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
+		active_pawn.set_active_glowing(false)
+		active_pawn = pawn
+		active_pawn.set_active_glowing(true)

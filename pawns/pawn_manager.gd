@@ -40,6 +40,4 @@ func _on_input_on_pawn(
 	shape_idx: int,
 	pawn: Pawn
 ):
-	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
-		print(pawn.name)
-		active_pawn = pawn
+	printerr("Not implemented!")
