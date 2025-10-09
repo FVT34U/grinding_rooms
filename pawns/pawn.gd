@@ -1,13 +1,13 @@
 class_name Pawn extends CharacterBody2D
 
 
-@export var pawn_team = PawnManager.Team.RED
+@export var pawn_team = PawnManager.TeamColor.RED
 
 @onready var team_manager: PawnManager = get_parent()
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-@export var speed: float = 300.0
+@export var speed: float = 200.0
 
 var is_moving: bool = false
 

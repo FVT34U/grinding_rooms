@@ -9,8 +9,9 @@
 [ext_resource type="Script" uid="uid://cxq2iss02b26t" path="res://world/navigation_manager.gd" id="6_i7n82"]
 [ext_resource type="Script" uid="uid://bikw0omoa72tn" path="res://world/camera_manager.gd" id="7_u6q7x"]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" node_paths=PackedStringArray("team_managers")]
 script = ExtResource("1_06gbv")
+team_managers = [NodePath("PlayerPawnManager"), NodePath("AiPawnManager")]
 
 [node name="NavigationManager" type="Node" parent="." node_paths=PackedStringArray("tilemap", "obstacle_tilemap")]
 unique_name_in_owner = true

@@ -1,7 +1,7 @@
 class_name PawnManager extends Node
 
 
-enum Team {
+enum TeamColor {
 	BLUE, 
 	RED,
 	GREEN,
@@ -11,17 +11,18 @@ enum Team {
 
 ## BLUE - only for player
 ## RED - basic enemy team
-@export var manager_team = Team.RED
+@export var manager_team_color = TeamColor.RED
 
 @onready var controlled_pawns: Array[Pawn] = []
 var active_pawn: Pawn = null
 
-signal pawn_team_changed(pawn: Pawn, new_team: PawnManager.Team)
+signal pawn_team_changed(pawn: Pawn)
+signal team_ends_their_turn(team: PawnManager)
 
 
-func change_pawn_team(manager: PawnManager, pawn: Pawn) -> bool:
-	pawn.reparent(manager)
-	pawn_team_changed.emit(pawn, manager.manager_team)
+func change_pawn_team(pawn: Pawn, new_manager: PawnManager) -> bool:
+	pawn.reparent(new_manager)
+	pawn_team_changed.emit(pawn, new_manager)
 	return true
 
 
@@ -34,7 +35,7 @@ func _ready() -> void:
 		active_pawn = controlled_pawns[0]
 
 
-func _on_input_on_pawn( 
+func _on_input_on_pawn(
 	viewport: Node, 
 	event: InputEvent, 
 	shape_idx: int,

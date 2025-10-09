@@ -12,6 +12,26 @@ signal amount_of_minutes_changed(new_minutes: int)
 ## once in a second, values: any positive float
 signal time_changed(new_time: float)
 
+@export var team_managers: Array[PawnManager] = []
+var all_pawns: Array[Pawn] = []
+
+var current_team: PawnManager = null
+var current_pawn: Pawn = null
+
+
+func _ready() -> void:
+	if team_managers.size() < 2:
+		printerr("Add at least 2 'PawnManager' to 'team_managers' list!")
+		get_tree().quit(1)
+		return
+	
+	for manager in team_managers:
+		all_pawns.append_array(manager.controlled_pawns)
+	
+	# Make a choise depends on speed/reaction stat of pawn
+	current_pawn = all_pawns[0]
+	current_team = current_pawn.team_manager
+
 
 func _process(delta: float) -> void:
 	time += delta
@@ -35,3 +55,16 @@ func _update_time(time: float):
 	if old_secs < seconds:
 		amount_of_seconds_changed.emit(seconds)
 		time_changed.emit(time)
+
+
+func _on_pawn_ends_its_turn(pawn: Pawn):
+	var idx = all_pawns.find(pawn)
+	
+	if idx == -1:
+		printerr("Pawn '{0}' not in 'all_pawns' list!".format({0: pawn}))
+		get_tree().quit(1)
+	
+	current_pawn = all_pawns[(idx + 1) % all_pawns.size()]
+	
+	#TODO: implement this function
+	current_pawn.team_manager.take_turn(current_pawn)

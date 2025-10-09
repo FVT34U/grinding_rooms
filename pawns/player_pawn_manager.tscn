@@ -4,4 +4,3 @@
 
 [node name="PlayerPawnManager" type="Node"]
 script = ExtResource("1_bvlla")
-manager_team = 0
