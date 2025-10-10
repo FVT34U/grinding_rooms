@@ -8,7 +8,6 @@ enum ControlType {
 var control_type: ControlType = ControlType.CAMERA
 
 @export var camera: CameraManager = null
-@export var nav_manager: NavigationManager = null
 
 
 func _ready() -> void:
@@ -43,15 +42,24 @@ func _on_tab_clicked(event: InputEvent):
 	control_type = (control_type + 1) % ControlType.size()
 
 
+##TODO: visualize some pawn informations
 func _on_input_on_pawn(
 	viewport: Node, 
 	event: InputEvent, 
 	shape_idx: int,
 	pawn: Pawn
 ):
-	if control_type != ControlType.CAMERA: return
-	
 	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
-		active_pawn.set_active_glowing(false)
-		active_pawn = pawn
-		active_pawn.set_active_glowing(true)
+		print(pawn.name)
+	#if control_type != ControlType.CAMERA: return
+	#
+	#if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
+		#active_pawn.set_active_glowing(false)
+		#active_pawn = pawn
+		#active_pawn.set_active_glowing(true)
+
+
+func _update_active_pawn(pawn: Pawn):
+	active_pawn.set_active_glowing(false)
+	active_pawn = pawn
+	active_pawn.set_active_glowing(true)

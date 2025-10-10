@@ -23,6 +23,8 @@ var path: Array[Vector2i]:
 		else: print("Warning: Path must contain at least 2 points")
 	get: return _path
 
+signal pawn_ends_its_turn(pawn: Pawn)
+
 
 func set_active_glowing(value: bool):
 	sprite.material.set_shader_parameter("enabled", value)
@@ -38,6 +40,7 @@ func _get_moving_direction() -> Vector2:
 	if _path.is_empty():
 		is_moving = false
 		position = end_point
+		pawn_ends_its_turn.emit(self)
 		return Vector2.ZERO
 	return position.direction_to(_get_path_next_point())
 

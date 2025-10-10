@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://world/globals.gd"
 EnhancedInput="*res://input/enhanced_input.gd"
+Logger="*res://world/logger.gd"
 
 [display]
 

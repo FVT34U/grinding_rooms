@@ -23,15 +23,29 @@ obstacle_tilemap = NodePath("../ObstacleTileMapLayer")
 
 [node name="PlayerPawnManager" parent="." node_paths=PackedStringArray("camera", "nav_manager") instance=ExtResource("3_jbbwk")]
 camera = NodePath("../Camera2D")
+manager_team_color = 0
 nav_manager = NodePath("../NavigationManager")
 
 [node name="Pawn" parent="PlayerPawnManager" instance=ExtResource("4_6srki")]
 position = Vector2(48, 48)
+pawn_team = 0
 
 [node name="Pawn2" parent="PlayerPawnManager" instance=ExtResource("4_6srki")]
 position = Vector2(80, 80)
+pawn_team = 0
 
-[node name="AiPawnManager" parent="." instance=ExtResource("4_i7n82")]
+[node name="Pawn3" parent="PlayerPawnManager" instance=ExtResource("4_6srki")]
+position = Vector2(624, 336)
+pawn_team = 0
+
+[node name="AiPawnManager" parent="." node_paths=PackedStringArray("nav_manager") instance=ExtResource("4_i7n82")]
+nav_manager = NodePath("../NavigationManager")
+
+[node name="Enemy1" parent="AiPawnManager" instance=ExtResource("4_6srki")]
+position = Vector2(208, 112)
+
+[node name="Enemy2" parent="AiPawnManager" instance=ExtResource("4_6srki")]
+position = Vector2(176, 144)
 
 [node name="HUD" parent="." instance=ExtResource("4_q6yfc")]
 unique_name_in_owner = true
