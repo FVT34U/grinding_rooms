@@ -42,7 +42,7 @@ func _on_tab_clicked(event: InputEvent):
 	control_type = (control_type + 1) % ControlType.size()
 
 
-##TODO: visualize some pawn informations
+##TODO: visualize some pawn information
 func _on_input_on_pawn(
 	viewport: Node, 
 	event: InputEvent, 
